@@ -41,8 +41,8 @@ object FileUtilities {
         return file
     }
 
-    fun deleteAllFiles(directory: String, list: List<String>?) {
-        list?.forEach {
+    fun deleteAllFiles(directory: String, fileNames: List<String>?) {
+        fileNames?.forEach {
             val file = File("$directory/$it")
             file.delete()
         }

@@ -18,6 +18,7 @@ object FileUtilities {
         inputStream: InputStream,
         outputFile: File,
     ): File {
+        outputFile.parentFile?.mkdirs()
         inputStream.use { it.copyTo(FileOutputStream(outputFile)) }
         return outputFile
     }
